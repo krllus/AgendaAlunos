@@ -29,8 +29,8 @@ public class AlunoDao extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase database){
 		String ddl = "CREATE TABLE " +TABELA+ "("
 				+"id INTEGER PRIMARY KEY, "
-				+"nome TEXT, telefone TEXT, site TEXT, email TEXT,"
-				+"endereco TEXT, foto TEXT,nota REAL)";
+				+"nome TEXT, telefone TEXT, endereco TEXT, site TEXT, email TEXT,"
+				+"foto TEXT,nota REAL)";
 		database.execSQL(ddl);
 					
 	}
@@ -46,10 +46,10 @@ public class AlunoDao extends SQLiteOpenHelper{
 		
 		values.put("nome", aluno.getNome());
 		values.put("telefone", aluno.getTelefone());
-		values.put("site", aluno.getSite());
+        values.put("endereco", aluno.getEndereco());
+        values.put("site", aluno.getSite());
 		values.put("email", aluno.getEmail());
-		values.put("endereco", aluno.getEndereco());
-		values.put("foto", aluno.getFoto());
+        values.put("foto", aluno.getFoto());
 		values.put("nota", aluno.getNota());
 		
 		getWritableDatabase().insert(TABELA, null, values);
@@ -58,7 +58,7 @@ public class AlunoDao extends SQLiteOpenHelper{
 	}
 	
 	public List<Aluno> listar(){
-		List<Aluno> lista = new ArrayList<>();
+		List<Aluno> lista = new ArrayList<Aluno>();
 		
 		String sql = "Select * from Aluno order by nome";
 		
@@ -71,9 +71,9 @@ public class AlunoDao extends SQLiteOpenHelper{
 				aluno.setId(cursor.getInt(0));
 				aluno.setNome(cursor.getString(1));
 				aluno.setTelefone(cursor.getString(2));
-				aluno.setSite(cursor.getString(3));
-				aluno.setEmail(cursor.getString(4));
-				aluno.setEndereco(cursor.getString(5));
+                aluno.setEndereco(cursor.getString(3));
+                aluno.setSite(cursor.getString(4));
+				aluno.setEmail(cursor.getString(5));
 				aluno.setFoto(cursor.getString(6));
 				aluno.setNota(cursor.getDouble(7));
 				
@@ -89,9 +89,14 @@ public class AlunoDao extends SQLiteOpenHelper{
 		}
 		return lista;
 	}
+
+
+
+
+
+/*
 	
-	
-/*	public void deletar(Aluno aluno){
+	public void deletar(Aluno aluno){
 		
 		String[] args ={ aluno.getId().toString() };
 		
@@ -100,8 +105,8 @@ public class AlunoDao extends SQLiteOpenHelper{
 		Log.i(TAG, "Aluno deletado: "+aluno.getNome());
 		
 	}
-	*/
-	
+
+*/
 	
 	
 }

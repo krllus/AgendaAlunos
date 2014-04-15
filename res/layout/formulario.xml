@@ -48,7 +48,22 @@
             android:ems="10"
             android:inputType="phone"
             />
-        
+
+        <TextView
+            android:id="@+id/tvEndereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/endereco"
+            />
+        <EditText
+            android:id="@+id/etEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/endereco_hint"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            />
+
         <TextView 
             android:id="@+id/tvSite"
             android:layout_width="wrap_content"
@@ -78,20 +93,7 @@
             android:inputType="textEmailAddress"
             />
   		
-        <TextView 
-            android:id="@+id/tvEndereco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/endereco"
-            />
-        <EditText 
-            android:id="@+id/etEndereco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/endereco_hint"
-            android:inputType="textPostalAddress"
-            android:ems="10"
-            />
+
         
         <TextView 
             android:id="@+id/tvNota"
@@ -99,12 +101,15 @@
             android:layout_height="wrap_content"
             android:text="@string/nota"
             />
-        <SeekBar 
-            android:id="@+id/sbNota"
+        <EditText
+            android:id="@+id/etNota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="10"
+            android:hint="@string/nota_hint"
+            android:ems="10"
+            android:inputType="numberDecimal"
             />
+
         
         <Button 
             android:id="@+id/btSalvar"

@@ -36,8 +36,8 @@ public class FormularioActivity extends Activity {
 				dao.cadastrar(aluno);
 				
 				dao.close();
-				
-				finish();
+				startActivity(new Intent(FormularioActivity.this, DetalhesAlunosActivity.class));
+
 			}
 		});
         
@@ -51,7 +51,8 @@ public class FormularioActivity extends Activity {
     	MenuInflater inflater  = this.getMenuInflater();
     	
     	inflater.inflate(R.menu.menu_principal, menu);
-    	
+
+
     	return true;
     	
     }

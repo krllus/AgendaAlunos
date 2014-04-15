@@ -14,7 +14,7 @@ public class FormularioHelper {
 	private EditText endereco;
 	private EditText site;
 	private EditText email;
-	private SeekBar nota;
+	private EditText nota;
 	private ImageView foto;
 	
 	private Aluno aluno;
@@ -26,7 +26,7 @@ public class FormularioHelper {
 		site = (EditText)activity.findViewById(R.id.etSite);
 		email = (EditText)activity.findViewById(R.id.etEmail);
 		endereco = (EditText)activity.findViewById(R.id.etEndereco);
-		nota = (SeekBar)activity.findViewById(R.id.sbNota);
+		nota = (EditText)activity.findViewById(R.id.etNota);
 		foto = (ImageView)activity.findViewById(R.id.ivFoto);
 		
 		aluno = new Aluno();
@@ -39,12 +39,10 @@ public class FormularioHelper {
 		aluno.setSite(site.getText().toString());
 		aluno.setEmail(email.getText().toString());
 		aluno.setEndereco(endereco.getText().toString());
-		aluno.setNota(Double.valueOf(nota.getProgress()));
+		aluno.setNota(Double.valueOf(nota.getText().toString()));
 		
 		return aluno;
 	}
-
-
 }
 
 

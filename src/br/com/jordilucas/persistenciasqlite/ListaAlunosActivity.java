@@ -60,7 +60,9 @@ public class ListaAlunosActivity extends Activity {
 						"Aluno: "+listaAlunos.get(posicao), Toast.LENGTH_SHORT).show();
 				
 				
-			
+			    startActivity(new Intent(ListaAlunosActivity.this, DetalhesAlunosActivity.class));
+
+
 			}
         	
         });

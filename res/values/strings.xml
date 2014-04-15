@@ -40,5 +40,7 @@
     <string name="detalhes_prova">Detalhes da Prova</string>
     <string name="materia">Matéria</string>
     <string name="data">Data</string>
+    <string name="nota_hint">Informe a nota do aluno</string>
+    <string name="detalhes_alunos">Detalhes Alunos</string>
 
 </resources>

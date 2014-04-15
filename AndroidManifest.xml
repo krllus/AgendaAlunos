@@ -29,6 +29,10 @@
             >
             
         </activity>
+        <activity android:name=".DetalhesAlunosActivity"
+                  android:label="@string/detalhes_alunos"
+            >
+            </activity>
     </application>
 
 </manifest>
